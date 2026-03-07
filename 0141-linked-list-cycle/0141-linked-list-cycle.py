@@ -10,20 +10,15 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        if head is None:
-            return False
         seen = set()
-        current = head
-        if current in seen:
-            return True
-        
+        current = head        
         while current:
+            if current is None:
+                return False
             if current in seen:
                 return True
-            else:
-                seen.add(current)
+            seen.add(current)
             current = current.next
-        return False
 
 
         
