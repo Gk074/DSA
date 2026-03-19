@@ -5,5 +5,10 @@ class Solution(object):
         :type b: int
         :rtype: int
         """
-        import operator
-        return operator.add(a,b)
+        MASK = 0xFFFFFFFF
+        MAX_INT = 0x7FFFFFFF
+        while b!=0:
+            c = ((a&b)<<1) & MASK
+            a = (a^b) & MASK
+            b=c
+        return a if a <= MAX_INT else ~(a ^ MASK)
