@@ -15,6 +15,6 @@ class Solution(object):
                 length = 1
                 while i+length in n:
                     length+=1
-                    longest = max(longest, length)
+                longest = max(longest, length)
         return longest
         
