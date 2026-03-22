@@ -7,6 +7,8 @@ class Solution(object):
         """
 
         n = set(nums)
+        if len(n) == 0:
+            return 0
         longest=1
         for i in n:
             if i-1 not in n:
