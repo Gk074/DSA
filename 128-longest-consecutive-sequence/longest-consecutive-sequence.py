@@ -6,19 +6,15 @@ class Solution(object):
         :rtype: int
         """
 
-        n = sorted(nums)
-        l=len(nums)
-        longest = 1
-        c=1
-        if l == 0:
+        n = set(nums)
+        if len(n) == 0:
             return 0
-        for i in range(l-1):
-            if n[i] == n[i+1]:
-                continue
-            if n[i]+1 == n[i+1]:
-                c+=1
-            else:
-                longest = max(longest,c)
-                c = 1
-        return max(longest, c)
+        longest=1
+        for i in n:
+            if i-1 not in n:
+                length = 1
+                while i+length in n:
+                    length+=1
+                    longest = max(longest, length)
+        return longest
         
