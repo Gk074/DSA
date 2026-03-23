@@ -13,7 +13,7 @@ class Solution(object):
         """
         if not preorder or not inorder:
             return None
-
+        if len(preorder) == 1: return root
         rootval = preorder[0]
         root = TreeNode(rootval)
         mid = inorder.index(rootval)
