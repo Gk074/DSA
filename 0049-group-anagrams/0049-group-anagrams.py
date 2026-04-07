@@ -7,12 +7,11 @@ class Solution(object):
         """
         if not strs:
             return []
-        ans = defaultdict(list)
-        
+        dict1={}
         for i in strs:
-            key = [0]*26
-            for c in i:
-                key[ord(c)-ord('a')]+=1
-            key = tuple(key)
-            ans[key].append(i)
-        return ans.values()
+            check = ''.join(sorted(i))
+            if check in dict1:
+                dict1[check].append(i)
+            else:
+                dict1[check] = [i]
+        return dict1.values()
