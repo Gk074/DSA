@@ -5,8 +5,8 @@ class Solution(object):
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        if len(strs)==1 or len(strs) == 0:
-            return [strs]
+        if not strs:
+            return []
         ans = defaultdict(list)
         
         for i in strs:
